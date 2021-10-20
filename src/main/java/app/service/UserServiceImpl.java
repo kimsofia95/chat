@@ -4,6 +4,8 @@ import app.dao.UserDao;
 import app.model.User;
 import org.springframework.stereotype.Service;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 import java.util.List;
 
 @Service
@@ -21,8 +23,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void saveUser() {
-        userDao.saveUser();
+    public void saveUser(User user) throws ParserConfigurationException, TransformerException {
+        userDao.saveUser(user);
     }
 
     @Override
